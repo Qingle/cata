@@ -9,10 +9,10 @@ import (
 )
 
 const (
-	SpellFlagMage       = core.SpellFlagAgentReserved1
-	ArcaneMissileSpells = core.SpellFlagAgentReserved2
-	HotStreakSpells     = core.SpellFlagAgentReserved3
-	BrainFreezeSpells   = core.SpellFlagAgentReserved4
+	SpellFlagMage     = core.SpellFlagAgentReserved1
+	Unused2           = core.SpellFlagAgentReserved2
+	HotStreakSpells   = core.SpellFlagAgentReserved3
+	BrainFreezeSpells = core.SpellFlagAgentReserved4
 )
 
 var TalentTreeSizes = [3]int{21, 21, 19}
@@ -306,7 +306,7 @@ func (mage *Mage) applyArcaneMissileProc() {
 			aura.Activate(sim)
 		},
 		OnCastComplete: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell) {
-			if !spell.Flags.Matches(ArcaneMissileSpells) {
+			if !spell.ProcMask.Matches(core.ProcMaskSpellDamage) {
 				return
 			}
 			if sim.Proc(procChance, "Arcane Missiles") {

@@ -15,7 +15,7 @@ func (mage *Mage) registerFrostfireBoltSpell() {
 		ActionID:       core.ActionID{SpellID: 44614},
 		SpellSchool:    core.SpellSchoolFire | core.SpellSchoolFrost,
 		ProcMask:       core.ProcMaskSpellDamage,
-		Flags:          SpellFlagMage | ArcaneMissileSpells | HotStreakSpells | core.SpellFlagAPL,
+		Flags:          SpellFlagMage | HotStreakSpells | core.SpellFlagAPL,
 		ClassSpellMask: MageSpellFrostfireBolt,
 		MissileSpeed:   28,
 

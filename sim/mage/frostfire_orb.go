@@ -107,7 +107,7 @@ func (ffo *FrostfireOrb) registerFrostfireOrbTickSpell() {
 		ActionID:       core.ActionID{SpellID: 95969},
 		SpellSchool:    core.SpellSchoolFrost | core.SpellSchoolFire,
 		ProcMask:       core.ProcMaskSpellDamage | core.ProcMaskNotInSpellbook,
-		Flags:          SpellFlagMage | ArcaneMissileSpells | core.SpellFlagNoLogs,
+		Flags:          SpellFlagMage | core.SpellFlagNoLogs,
 		ClassSpellMask: MageSpellFrostfireOrb,
 
 		Cast: core.CastConfig{
